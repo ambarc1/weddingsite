@@ -95,7 +95,7 @@
 
 /* Carousel cursor styling */
 #multiCarousel {
-  cursor: grab;
+  /* cursor: grab; */
   touch-action: pan-y;
 }
 
