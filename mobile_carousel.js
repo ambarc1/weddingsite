@@ -1,13 +1,13 @@
 const images = [
-  "photo_gallery/img1.jpg",
-  "photo_gallery/img2.jpg",
-  "photo_gallery/img3.jpg",
-  "photo_gallery/img4.jpg",
-  "photo_gallery/img5.jpg",
-  "photo_gallery/img6.jpg",
-  "photo_gallery/img7.jpg",
-  "photo_gallery/img8.jpg",
-  "photo_gallery/img9.jpg"
+  "images/photo_gallery/img1.jpg",
+  "images/photo_gallery/img2.jpg",
+  "images/photo_gallery/img3.jpg",
+  "images/photo_gallery/img4.jpg",
+  "images/photo_gallery/img5.jpg",
+  "images/photo_gallery/img6.jpg",
+  "images/photo_gallery/img7.jpg",
+  "images/photo_gallery/img8.jpg",
+  "images/photo_gallery/img9.jpg"
 ];
 
 function buildCarousel() {
