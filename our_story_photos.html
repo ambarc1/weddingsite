@@ -20,8 +20,8 @@
                     <a class="navbar-brand" href="index.html"> <img src="icons_logos/AB2.png" style="height: auto; width: 40px;"></a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
                     <div class="navbar-collapse collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav me-auto mb-2 mb-md-0">
                             <li class="nav-item">
@@ -86,69 +86,27 @@
                 <div class="row">
                     <div class="col-6 col-md">
                         <img src="photo_gallery.png" width="45%; float: right">
-                    </div>                
-        <div class="container-fluid">
-  <div class="multi-carousel-container" id="multiCarousel">
-    <div class="multi-carousel-inner" id="carouselInner">
+                    </div>       
+             
+                
+              <div id="multiCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" id="carousel-inner"></div>
 
-      <div class="multi-carousel-item .active" data-index="0">
-        <div class="img-container"><span class="item-number"></span>
-          <img src="photo_gallery/img1.jpg" alt="Image 1">
-        </div>
-      </div>
-      <div class="multi-carousel-item" data-index="1">
-        <div class="img-container"><span class="item-number"></span>
-          <img src="photo_gallery/img2.jpg" alt="Image 2">
-        </div>
-      </div>
-      <div class="multi-carousel-item" data-index="2">
-        <div class="img-container"><span class="item-number"></span>
-          <img src="photo_gallery/img3.jpg" alt="Image 3">
-        </div>
-      </div>
-      <div class="multi-carousel-item" data-index="3">
-        <div class="img-container"><span class="item-number"></span>
-          <img src="photo_gallery/img4.jpg" alt="Image 4">
-        </div>
-      </div>
-      <div class="multi-carousel-item" data-index="4">
-        <div class="img-container"><span class="item-number"></span>
-          <img src="photo_gallery/img5.jpg" alt="Image 5">
-        </div>
-      </div>
-      <div class="multi-carousel-item" data-index="5">
-        <div class="img-container"><span class="item-number"></span>
-          <img src="photo_gallery/img6.jpg" alt="Image 6">
-        </div>
-      </div>
-      <div class="multi-carousel-item" data-index="6">
-        <div class="img-container"><span class="item-number"></span>
-          <img src="photo_gallery/img7.jpg" alt="Image 7">
-        </div>
-      </div>
-      <div class="multi-carousel-item" data-index="7">
-        <div class="img-container"><span class="item-number"></span>
-          <img src="photo_gallery/img8.jpg" alt="Image 8">
-        </div>
-      </div>
-      <div class="multi-carousel-item" data-index="8">
-        <div class="img-container"><span class="item-number"></span>
-          <img src="photo_gallery/img9.jpg" alt="Image 9">
-        </div>
-      </div>
-<button class="multi-carousel-control-prev" id="prevBtn">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button>
-    <button class="multi-carousel-control-next" id="nextBtn">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button>
-  </div>
-</div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#multiCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#multiCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </button>
+              </div>
 
                 <br><div style="color:white"><small>Professional photos by <a class="link-light text-decoration-none" href="http://danielletowlephotography.com/"style="color: rgb(119, 165, 148);">Danielle Towle.</a></small> </div>
             </footer>
         </div>
     </body>
-    <script src="countdown.js"></script>
+      <script src="countdown.js"></script>
+
+      <script src="mobile_carousel.js"></script>
 
 </html>
