@@ -1,3 +1,33 @@
+body.manor {
+  margin: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0,0,0,0.55)), url('images/bkg/manor_side.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+body.ring {
+  margin: 0;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bkg/rings.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+body.cherryblossoms {
+  margin: 0;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bkg/cherryblossoms.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
 /* Prevent PNG images from shrinking too small */
 img.png-min {
   min-width: 200px;   /* adjust as needed */

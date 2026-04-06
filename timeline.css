@@ -7,11 +7,12 @@ body{margin-top:20px;}
     letter-spacing: 0.2px;
     position: relative;
     line-height: 1.4em;
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 50px;
     list-style: none;
     text-align: left;
     max-width: 40%;
+    color: white;
 }
 
 @media (max-width: 767px) {
@@ -24,6 +25,7 @@ body{margin-top:20px;}
 .timeline h1 {
     font-weight: 300;
     font-size: 1.4em;
+    color: white;
 }
 
 .timeline h2,
@@ -31,10 +33,11 @@ body{margin-top:20px;}
     font-weight: 600;
     font-size: 1.2em;
     margin-bottom: 10px;
+    color: rgb(119, 165, 148);
 }
 
 .timeline .event {
-    border-bottom: 1px dashed #e8ebf1;
+    border-bottom: 1px dashed white;
     padding-bottom: 25px;
     margin-bottom: 25px;
     position: relative;
@@ -79,7 +82,7 @@ body{margin-top:20px;}
     -webkit-box-shadow: 0 0 0 3px rgb(119, 165, 148);
     box-shadow: 0 0 0 3px rgb(119, 165, 148);
     left: -55.8px;
-    background: #fff;
+    background: white;
     border-radius: 50%;
     height: 9px;
     width: 9px;
