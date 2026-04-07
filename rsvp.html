@@ -53,14 +53,17 @@
         </header>
         <div>
             <br><br>
-            <div class="d-flex p-5" style="flex-direction: column">
+            <div class="d-flex p-5" style="flex-direction: column; text-align: center">
                 <img class="png-min-lrg" src="images/titles/rsvp.png" style="align-self: center" id="rsvp">
-                        <h1 class="display-6" style="text-align: center; color: white"><i>Please use the button below to provide your attendance details and confirm your participation.</i></h1>
-                        <br><br>
-                <a class="btn btn-success" style="align-self: center" type="button" 
-                    href="javascript:void( window.open( 'https://form.jotform.com/260859394347067', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) " 
-                    style="color: rgb(255, 255, 255); border-radius: 10px; width: 170px;">Click Here to RSVP!
-                </a>
+                        <h1 class="display-6" style="color: white">RSVP Window Opens in <span id="demo2"></span>!</h1> 
+                        <p class="lead" style="color: white"><i>Be sure to return on July 10, 2026 to confirm your attendance details. <br>In the meantime, feel free to check out the rest of the site!</i></p>
+                        <br>
+
+                        <button type="button" class="btn btn-success" style="align-self: center; width: 150px; border-radius: 10px" id="button_rsvp">RSVP Closed Until 7/10/2026</button>
+<!--
+                <a class="btn btn-success" style="align-self: center" type="button" href="rsvp_active.html"
+                    style="color: rgb(255, 255, 255); border-radius: 10px; width: 170px;">Click Here to RSVP!</a>
+-->
                 <br>
             </div>
         </div>
