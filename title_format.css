@@ -18,9 +18,9 @@ body.ring {
   background-attachment: fixed;
 }
 
-body.cherryblossoms {
+body.interior {
   margin: 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bkg/cherryblossoms.png');
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bkg/manor_interior.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
