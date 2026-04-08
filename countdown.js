@@ -7,9 +7,7 @@ var x = setInterval(function() //updates every 1s
   var distance = countDownDate - now; //distance between now and the count down date
   var distance2 = countDownDate2 - now; //distance between now and the count down date
 
-
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
   var days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
  
   document.getElementById("demo").innerHTML = days + " Days ";
