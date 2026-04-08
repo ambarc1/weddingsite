@@ -12,8 +12,8 @@ var x = setInterval(function() //updates every 1s
 
   var days2 = Math.floor(distance2 / (1000 * 60 * 60 * 24));
  
-  document.getElementById("demo").innerHTML = days + " days ";
-  document.getElementById("demo2").innerHTML = days2 + " days";
+  document.getElementById("demo").innerHTML = days + " Days ";
+  document.getElementById("demo2").innerHTML = days2 + " Days";
 
   if (distance < 0) 
   {
