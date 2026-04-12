@@ -28,6 +28,16 @@ body.interior {
   background-attachment: fixed;
 }
 
+body.outdoor {
+  margin: 0;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/bkg/manor_outside.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
 /* Prevent PNG images from shrinking too small */
 img.png-min {
   min-width: 200px;   /* adjust as needed */
@@ -53,14 +63,7 @@ img.png-min-lrg {
 /* Optional: stricter control on very small screens */
 @media (max-width: 576px) {
   img.png-min {
-    min-width: 120px;
-    overflow-x: auto
-  }
-}
-
-@media (max-width: 576px) {
-  img.png-min-main {
-    min-width: 120px;
+    min-width: 50%;
     overflow-x: auto
   }
 }
