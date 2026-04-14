@@ -7,7 +7,7 @@ body{margin-top:20px;}
     letter-spacing: 0.2px;
     position: relative;
     line-height: 1.4em;
-    font-size: 1.3em;
+    font-size: 1.2em;
     padding: 50px;
     list-style: none;
     text-align: left;
@@ -23,14 +23,14 @@ body{margin-top:20px;}
 }
 
 .timeline h1 {
-    font-weight: 300;
-    font-size: 1.4em;
+    font-weight: 150;
+    font-size: 1em;
     color: white;
 }
 
 .timeline h2,
 .timeline h3 {
-    font-weight: 600;
+    font-weight: 450;
     font-size: 1.2em;
     margin-bottom: 10px;
     color: rgb(119, 165, 148);
@@ -63,11 +63,11 @@ body{margin-top:20px;}
 }
 
 .timeline .event:before {
-    left: -270px;
+    left: -290px;
     content: attr(data-date);
     text-align: right;
-    font-weight: 200;
-    font-size: 1em;
+    font-weight: 450;
+    font-size: 1.2em;
     min-width: 120px;
 }
 

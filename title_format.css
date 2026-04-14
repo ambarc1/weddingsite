@@ -49,28 +49,35 @@ img.png-min {
 img.png-min-main {
   min-width: 300px;
   min-height: auto; 
-  max-width: 850px;
+  max-width: 750px;
   max-height: auto; 
 }
 
 img.png-min-lrg {
-  min-width: 300px;
+  min-width: 200px;
   min-height: auto; 
-  max-width: 450px;
+  max-width: 350px;
   max-height: auto; 
 }
 
 /* Optional: stricter control on very small screens */
 @media (max-width: 576px) {
   img.png-min {
-    min-width: 50%;
+    min-width: 200px;
+    overflow-x: auto
+  }
+}
+
+@media (max-width: 576px) {
+  img.png-min-main {
+    min-width: 300px;
     overflow-x: auto
   }
 }
 
 @media (max-width: 576px) {
   img.png-min-lrg {
-    min-width: 120px;
+    min-width: 200px;
     overflow-x: auto
   }
 }
