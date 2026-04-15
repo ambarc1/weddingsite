@@ -8,6 +8,16 @@ body.manor {
   background-attachment: fixed;
 }
 
+body.altar {
+  margin: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0,0,0,0.55)), url('images/bkg/altar_space.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
 body.ring {
   margin: 0;
   background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bkg/rings.png');
@@ -20,7 +30,7 @@ body.ring {
 
 body.interior {
   margin: 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bkg/manor_interior.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bkg/tables_interior.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,9 +38,9 @@ body.interior {
   background-attachment: fixed;
 }
 
-body.outdoor {
+body.overhead {
   margin: 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/bkg/manor_outside.jpeg');
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/bkg/drone_image.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -53,7 +63,7 @@ img.png-min-main {
   max-height: auto; 
 }
 
-img.png-min-lrg {
+img.png-min-rsvp {
   min-width: 200px;
   min-height: auto; 
   max-width: 350px;
@@ -76,7 +86,7 @@ img.png-min-lrg {
 }
 
 @media (max-width: 576px) {
-  img.png-min-lrg {
+  img.png-min-rsvp {
     min-width: 200px;
     overflow-x: auto
   }
