@@ -1,26 +1,25 @@
 body.manor {
   margin: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0,0,0,0.55)), url('images/bkg/manor_side.jpg'); 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55)), url('images/bkg/manor_side.jpg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* height: 100vh; */
   background-attachment: fixed;
 }
 
 body.altar {
   margin: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0,0,0,0.55)), url('images/bkg/altar_space.jpg'); 
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6)), url('images/bkg/altar_space.jpg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   background-attachment: fixed;
 }
-
+ 
 body.ring {
   margin: 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bkg/rings.png');
+  background-image: linear-gradient(rgba(0,0,0,0.4)), url('images/bkg/rings.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,7 +29,7 @@ body.ring {
 
 body.interior {
   margin: 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bkg/tables_interior.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4)), url('images/bkg/tables_interior.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,7 +39,7 @@ body.interior {
 
 body.overhead {
   margin: 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('images/bkg/drone_image.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.6)), url('images/bkg/drone_image.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -48,12 +47,12 @@ body.overhead {
   background-attachment: fixed;
 }
 
-/* Prevent PNG images from shrinking too small */
+/* Prevent PNG titles from shrinking too small */
 img.png-min {
-  min-width: 200px;   /* adjust as needed */
-  min-height: auto;   /* keeps aspect ratio */
+  min-width: 200px;
+  min-height: auto;
   max-width: 600px;
-  max-height: auto    /* still responsive */
+  max-height: auto;
 }
 
 img.png-min-main {
@@ -70,23 +69,23 @@ img.png-min-rsvp {
   max-height: auto; 
 }
 
-/* Optional: stricter control on very small screens */
+/* Formatting for mobile devices and small screens */
 @media (max-width: 576px) {
+      body.interior {
+    background-image: linear-gradient(rgba(0,0,0,0.4)), url('images/bkg/tables_mobile.jpg');
+  }
+
   img.png-min {
     min-width: 200px;
     overflow-x: auto
   }
-}
 
-@media (max-width: 576px) {
   img.png-min-main {
     min-width: 300px;
     overflow-x: auto
   }
-}
 
-@media (max-width: 576px) {
-  img.png-min-rsvp {
+    img.png-min-rsvp {
     min-width: 200px;
     overflow-x: auto
   }
