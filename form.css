@@ -17,3 +17,10 @@
 .mt-200 {
   margin-top:200px
 }
+
+@media (max-width: 768px) {
+  .btn-success {
+    margin-top: 10px;
+    margin-left: 12px;
+  }
+}
