@@ -37,6 +37,16 @@ body.interior {
   background-attachment: fixed;
 }
 
+body.couple {
+  margin: 0;
+  background-image: linear-gradient(rgba(0,0,0,0.4)), url('images/bkg/couple.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-attachment: fixed;
+}
+
 body.overhead {
   margin: 0;
   background-image: linear-gradient(rgba(0,0,0,0.6)), url('images/bkg/drone_image.jpg');
@@ -89,4 +99,36 @@ img.png-min-rsvp {
     min-width: 200px;
     overflow-x: auto
   }
+
+
+  .btn-success {
+    margin-top: 10px;
+    margin-left: 12px;
+  }
+
+#sec1
+{
+  text-align: center;
+}
+#sec2
+{
+  text-align: center;
+}
+#sec3
+{
+  text-align: center;
+}
+
+    #sec1pic{
+    display:none;
+  }
+
+  #sec2pic{
+    display:none;
+  }
+
+  #sec3pic{
+    display:none;
+  }
+
 }

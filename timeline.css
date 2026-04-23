@@ -13,6 +13,7 @@ body{margin-top:20px;}
     text-align: left;
     max-width: 40%;
     color: white;
+    text-shadow: 2px 2px 5px rgb(55, 55, 55);
 }
 
 @media (max-width: 767px) {
