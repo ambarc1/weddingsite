@@ -5,6 +5,12 @@ body.manor {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
+  @media (max-width: 576px) {
+      body.manor {
+    background-image: linear-gradient(rgba(0,0,0,0.4)), url('images/bkg/manor_side.jpg');
+    }
+  }
 }
 
 body.altar {
@@ -15,6 +21,12 @@ body.altar {
   background-repeat: no-repeat;
   height: 100vh;
   background-attachment: fixed;
+
+  @media (max-width: 576px) {
+      body.manor {
+    background-image: linear-gradient(rgba(0,0,0,0.4)), url('images/bkg/altar_space.jpg');
+    }
+  }
 }
  
 body.ring {
@@ -25,6 +37,12 @@ body.ring {
   background-repeat: no-repeat;
   height: 100vh;
   background-attachment: fixed;
+
+  @media (max-width: 576px) {
+      body.manor {
+    background-image: linear-gradient(rgba(0,0,0,0.4)), url('images/bkg/rings.png');
+    }
+  }
 }
 
 body.interior {
@@ -35,6 +53,12 @@ body.interior {
   background-repeat: no-repeat;
   height: 100vh;
   background-attachment: fixed;
+
+  @media (max-width: 576px) {
+      body.manor {
+    background-image: linear-gradient(rgba(0,0,0,0.4)), url('images/bkg/tables_interior.jpg');
+    }
+  }
 }
 
 body.couple {
@@ -45,6 +69,12 @@ body.couple {
   background-repeat: no-repeat;
   height: 100vh;
   background-attachment: fixed;
+
+  @media (max-width: 576px) {
+      body.manor {
+    background-image: linear-gradient(rgba(0,0,0,0.4)), url('images/bkg/couple.jpg');
+    }
+  }
 }
 
 body.overhead {
@@ -55,6 +85,12 @@ body.overhead {
   background-repeat: no-repeat;
   height: 100vh;
   background-attachment: fixed;
+
+  @media (max-width: 576px) {
+      body.manor {
+    background-image: linear-gradient(rgba(0,0,0,0.4)), url('images/bkg/drone_image.jpg');
+    }
+  }
 }
 
 /* Prevent PNG titles from shrinking too small */
@@ -99,7 +135,6 @@ img.png-min-rsvp {
     min-width: 200px;
     overflow-x: auto
   }
-
 
   .btn-success {
     margin-top: 10px;
