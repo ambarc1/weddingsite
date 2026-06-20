@@ -1,69 +1,132 @@
 <?php
 
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    die('Invalid request');
+}
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . '/PHPMailer/src/PHPMailer.php';
+require __DIR__ . '/PHPMailer/src/SMTP.php';
+require __DIR__ . '/PHPMailer/src/Exception.php';
+
 $firstName = htmlspecialchars($_POST['firstName']);
 $lastName = htmlspecialchars($_POST['lastName']);
 $numberAttending = htmlspecialchars($_POST['numberAttending']);
-$childrenY = htmlspecialchars($_POST['childrenY']);
-$childrenN = htmlspecialchars($_POST['childrenN']);
+$children = htmlspecialchars($_POST['children']);
 $dietaryRest = htmlspecialchars($_POST['dietaryRest']);
 $disab = htmlspecialchars($_POST['disab']);
 $songRequest = htmlspecialchars($_POST['songRequest']);
 $funFact = htmlspecialchars($_POST['funFact']);
 $advice = htmlspecialchars($_POST['advice']);
-$email = filter_var($_POST['email']);
+$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+if ($children === 'Yes') {
+    $childResponse = "Yes";
+} else {
+    $childResponse = "No";
+}
 
+// ==================================================
+// Adds Responses to CSV File
+// ==================================================
+$file = 'rsvp_responses.csv';
+$fp = fopen($file, 'a');
 
-$hostEmail = "rsvp_noreply@ganttwedding.com";
+fputcsv($fp, [
+    date('Y-m-d H:i:s'),
+    $firstName,
+    $lastName,
+    $numberAttending,
+    $children,
+    $dietaryRest,
+    $disab,
+    $songRequest,
+    $funFact,
+    $advice,
+    $email
+]);
+fclose($fp);
 
-/* Notification to you */
-$subject = "New RSVP from $firstName $lastName";
+try {
+// ==================================================
+// Email to Host
+// ==================================================
+$hostmail = new PHPMailer(true);
 
-$message = "
-Name: $firstName $lastName
+$hostmail->isSMTP();
 
-Email: $email
+$hostmail->Host = 'ganttwedding.com';
+$hostmail->SMTPAuth = true;
+$hostmail->Username = 'rsvp_noreply@ganttwedding.com';
+$hostmail->Password = 'TankaJahari';
+$hostmail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+$hostmail->Port = 587;
 
-Attending: $numberAttending
+$hostmail->setFrom('rsvp_noreply@ganttwedding.com', 'The Gantt Wedding');
+$hostmail->addAddress('nicola.barclift@gmail.com');
+$hostmail->addAddress('dragonzkiller@gmail.com');
 
-Bringing Children: $childrenY
-Not Bringing Children: $childrenN
+$hostmail->isHTML(true);
+$hostmail->Subject = 'New RSVP Submission';
 
-Dietary Restrictions: $dietaryRest
+$hostmail->Body = "
+        <h2>New RSVP Received! Guest details are below.</h2>
+        <p><strong>First Name:</strong> {$firstName}</p>
+        <p><strong>Last Name:</strong> {$lastName}</p>
+        <p><strong>Email:</strong> {$email}</p>
+        <p><strong>Number of Attendees:</strong> {$numberAttending}</p>
+        <p><strong>Children Under 10 Attending?:</strong> {$childResponse}</p>
+        <p><strong>Dietary Restrictions:</strong> {$dietaryRest}</p>
+        <p><strong>Physical Limitations or Disabilities:</strong> {$disab}</p>
+        <p><strong>Song Request:</strong> {$songRequest}</p>
+        <p><strong>Fun Fact:</strong> {$funFact}</p>
+        <p><strong>A Piece of Advice:</strong> {$advice}</p>
+    ";
 
-Physical Limitations or Disabilities: $disab
+$hostmail->send();
 
-Song Request: $songRequest
+// ==================================================
+// Confirmation Email to Guest
+// ==================================================
+$guestmail = new PHPMailer(true);
 
-Fun Fact: $funFact
+$guestmail->isSMTP();
 
-A Piece of Advice: $advice
+$guestmail->Host = 'ganttwedding.com';
+$guestmail->SMTPAuth = true;
+$guestmail->Username = 'rsvp_noreply@ganttwedding.com';
+$guestmail->Password = 'TankaJahari';
+$guestmail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+$guestmail->Port = 587;
 
-";
+$guestmail->setFrom('rsvp_noreply@ganttwedding.com', 'The Gantt Wedding');
+    $guestmail->addAddress($email, $firstName);
 
-$headers = "From: $hostEmail";
+    $guestmail->isHTML(true);
+    $guestmail->Subject = 'RSVP Confirmation';
 
-mail($hostEmail, $subject, $message, $headers);
+    $guestmail->Body = "
+        <h2>Thank you for your RSVP!</h2>
+        <p>Hello {$firstName},</p>
+        <p>We have received your RSVP response. Your submission details are below.</p>
+        <p><strong>First Name:</strong> {$firstName}</p>
+        <p><strong>Last Name:</strong> {$lastName}</p>
+        <p><strong>Number of Attendees:</strong> {$numberAttending}</p>
+        <p><strong>Children Under 10 Attending?:</strong> {$childResponse}</p>
+        <p><strong>Dietary Restrictions:</strong> {$dietaryRest}</p>
+        <p><strong>Physical Limitations or Disabilities:</strong> {$disab}</p>
+        <p>Thank you so much for your support. We look forward to celebrating 
+        with you! As a reminder, the wedding will be held on October 17 at Rose 
+        Hill Manor in Leesburg, VA</p>
+    ";
+    $guestmail->send();
+    echo "RSVP submitted successfully.";
+} 
 
-/* Confirmation to guest */
-$guestSubject = "Your RSVP Confirmation";
-
-$guestMessage = "
-Hello $firtName,
-
-Thank you for your RSVP.
-
-Name: $firstName $lastName
-
-Number of guests: $numberAttending
-
-Dietary Restrictions: $dietaryRest
-
-Physical Limitations or Disabilities: $disab
-
-We look forward to seeing you on October 17 at Rose Hill Manor!
-";
-
-mail($email, $guestSubject, $guestMessage, $headers);
+catch (Exception $e) {
+    echo "Message could not be sent. Error: {$hostmail->ErrorInfo}";
+}
 
 ?>
 
@@ -132,7 +195,7 @@ mail($email, $guestSubject, $guestMessage, $headers);
             <img class="png-min-rsvp" src="/images/titles/rsvp.png"
                 style="width: 100%; height: auto;" id="rsvp">
             <h1 class="display-6" style="color: white"><i>Thank You for Your Confirmation!</i></h1>
-            <p class="lead" style="color: white">We look forward to seeing you on the big day. Click <a class="link-light text-decoration-none" 
+            <p class="lead" style="color: white">You will receive an email confirmation shortly. We look forward to seeing you on the big day. Click <a class="link-light text-decoration-none" 
             href="/index.html" style="color: rgb(119, 165, 148);">Here </a>to return to the Home Page.</p><br>
         </div>
 
