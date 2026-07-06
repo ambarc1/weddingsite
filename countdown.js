@@ -1,5 +1,5 @@
 var countDownDate = new Date("Oct 17, 2026 08:00:00").getTime();
-var countDownDate2 = new Date("Jul 10, 2026 08:00:00").getTime();
+var countDownDate2 = new Date("Jul 21, 2026 08:00:00").getTime();
 
 function printCountdownDays() {
   var now = new Date().getTime();
